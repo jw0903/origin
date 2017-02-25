@@ -3,25 +3,45 @@
     <meta charset="utf-8"/>
     <title>三栏式布局</title>
     <style>
+    /* 子元素浮动float时无法将父元素撑开，主要解决这一问题
+        1、父元素设置overflow：hidden/auto
+        2、在父元素末尾添加一个额外标签，clear：both撑开
+            兼容性好，没什么问题，但是会多出无用的标签
+        3、对父容器使用after伪类和内容声明在指定的现在内容末尾添加新的内容。经常的做法就是添加一个“点”，因为它比较小不太引人注意。然后我们再利用它来清除浮动（闭合浮动元素），并隐藏这个内容。
+        示范写法：#box:after{ content:"."; height:0; visibility:hidden; display:block; clear:both; }
+        4、浮动父元素：float-to-float
+            利用 浮动元素的一个特性：浮动元素会闭合浮动元素
+     */
         .container{
-            position: absolute;
             padding: 20px;
             background-color: #eee;
             border: 1px solid #999;
-            height: auto;
-            min-width: 300px;
+            clear:both;
+            overflow: hidden;
         }
+        /*.container::after{
+             content:"wef"; 
+             height:0; 
+             visibility:hidden; 
+             display:block; 
+             clear:both; 
+         }*/
+         /*.cc{
+            clear:both;
+         }*/
         .left{
-            position: absolute;
+            float: left;
             padding: 20px;
+            width: 200px;
+            height: 215px;
             border: 1px solid #999;
             background: #fff;
         }
         .right{
-            position: relative;
-            right: 80px;
+            float: right;
             width: 120px;
-            padding: 20px;
+            height: 470px;
+            margin: 20px;
             border: 1px solid #999;
             background: #fff;
         }
@@ -29,15 +49,13 @@
             width: 80px;
             height: 80px;
             background-color: #eee;
-            padding: 20px;
             margin: 20px;
             border: 1px solid #999;
         }
         .mid{
-            margin: 0 300px;
-            padding: 20px;
             background: #fff;
             border: 1px solid #999;
+            margin:20px 206px 50px 260px;
         }
     </style>
     <body>
@@ -56,11 +74,11 @@
             </div>
             <div class="mid">
                 <p>我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么</p>
-                <p>我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么</p>
+                
                 <p>我也不知道这是什么也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么</p>
                 <p>我也不知道这是什么我我也不知道这是什么我也不知道这是什么我也不知道这是什么我也这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么我也不知道这是什么</p>
             </div>
-            
+            <!-- <div class="cc"></div> -->            
         </div>
     </body>
 </html>
