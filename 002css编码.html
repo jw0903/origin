@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <title>table标签</title>
         <style>
-            *{
+            /**{
                 margin: 0;
                 padding: 0;
-            }
+            }*/
             body{
                 background-color: #000;
             }
@@ -42,7 +42,16 @@
             .pic p,.pic img{
                 text-align: center;
             }
+            .button{
+                font-weight: bold;
+                height: 50px;
+                line-height: 20px;
+                font-size: 20px;
 
+                border-radius: 5px;
+                width: 800px;
+                background: #3355d0
+            }
         </style>
     </head>
     <body>
@@ -98,43 +107,44 @@
             <div class="page">
                  <h3>文章二级标题</h3>
                  <p>文章作者 文章发表时间</p>
-                 <ol>
+                 <div style="width:900px;margin:0 auto">
+                     <ol>
                      <li>排名1</li>
                      <li>拍名2</li>
                      <li>排名3</li>
                  </ol>
                  <p>下面是一个表格，给表格加了一个border="1"好让你能看出来是一个表格</p>
                  <table border="solid 1px">
-                     <tr>
-                         <th>表头1</th>
-                         <th>表头2</th>
-                         <th>表头3</th>
+                     <tr class="tou">
+                         <th bgcolor="#dedede">表头1</th>
+                         <th bgcolor="#dedede">表头2</th>
+                         <th bgcolor="#dedede">表头3</th>
                      </tr>
                      <tr>
-                         <th>表内容1</th>
-                         <th>表内容2</th>
-                         <th><a href="#">操作</a></th>
+                         <td>表内容1</td>
+                         <td>表内容2</td>
+                         <td><a href="#">操作</a></td>
                      </tr>
                      <tr>
-                         <th>表内容1</th>
-                         <th>表内容2</th>
-                         <th><a href="#">操作</a></th>
+                         <td>表内容1</td>
+                         <td>表内容2</td>
+                         <td><a href="#">操作</a></td>
                      </tr>
                      <tr>
-                         <th>表内容1</th>
-                         <th>表内容2</th>
-                         <th><a href="#">操作</a></th>
-                     </tr>
+                         <td>表内容1</td>
+                         <td>表内容2</td>
+                         <td><a href="#">操作</a></td>
                      <tr>
-                         <th>总计</th>
-                         <th colspan="2">1000</th>
+                         <td>总计</td>
+                         <td colspan="2">1000</td>
                      </tr>
                  </table>
                  <h2>这里是侧栏</h2>
                  <h2>侧栏注册窗口标题</h2>
                  <p>请输入邮箱地址：<input type="text" placeholder="这是一个文本输入框" /></p>
-                 <p>邮箱地址请按照要求格式输入</p>
-                 <p>请输入密码：<input type="text" placeholder="这是一个文本输入框"/>请再输入密码：<input type="text" placeholder="这是一个文本输入框"/></p>
+                 <p style="color:grey;font-size:13px;">邮箱地址请按照要求格式输入</p>
+                 <p>请输入密码：<input type="text" placeholder="这是一个文本输入框"/></p>
+                 <p>请再输入密码：<input type="text" placeholder="这是一个文本输入框"/></p>
                  <b>密码请为6-16为英文数字</b>
                 <p>
                     性别：
@@ -156,6 +166,8 @@
                     个人描述：
                     <textarea name="per" id="per" cols="20" rows="2" placeholder="这里是一个个人描述的栏目"></textarea>
                 </p>
+                 </div>
+                <input type="button" value="确认提交" class="button" />
             </div>
         </div>
         <p>版权所有©</p>
