@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>15task -02-</title>
+
+    </head>
+    <body>
+        <script>
+          function isArray(arr){
+            return Object.prototype.toString.call(obj)==='[object Array]';
+          }  
+          function isFunction(fn){
+            return typeof fn === 'function';
+          }
+          function cloneObject(src){
+                var o;
+                if(Object.prototype.toString.call(src)==="[object Array]"){
+                    o=[];
+                }else{
+                    o={};
+                }
+                for(var i in src){
+                    if(src.hasOwnProperty(i)){
+                        if(typeof src[i]==="object"){
+                            o[i]=cloneObject(src[i]);
+                        }else{
+                            o[i]=src[i];
+                        }
+                    }
+                }
+                return o;
+          }
+          var srcObj={
+            a:1,
+            b:{
+                b1:["hello","hi"],
+                b2:"JavaScript"
+            }
+          };
+          Object.prototype.bar=1;
+
+          var abObj=srcObj;
+          var tarObj=cloneObject(srcObj);
+
+
+          console.log("原始值："+abObj.a);
+          console.log("原始值："+abObj.b.b1[0]);
+          
+          console.log("原始值："+tarObj.a);
+          console.log("原始值："+tarObj.b.b1[0]);
+          
+          srcObj.a=2;
+          srcObj.b.b1[0]="Hello";
+          Object.prototype.bar=5;
+          console.log(abObj.a);
+          console.log(abObj.b.b1[0]);
+          console.log("原始值bar："+abObj.bar);
+          console.log("原始值bar："+tarObj.bar);
+          console.log(tarObj.a);
+          console.log(tarObj.b.b1[0]);
+          function uniqArrqy(arr){
+
+          }
+          var a=[1,3,5,7,5,3];
+          function uniq(){
+            var newArr=[];
+            for(var i in arr){
+                if(newArr.indexOf(arr[i])==-1){//查找不到就存入数组；                    newArr.push(arr[i]);
+                }
+            }
+          }
+        </script>
+    </body>
+</html>

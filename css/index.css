@@ -1,0 +1,483 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ul,ol,li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+body, button, input, textarea {
+    font-family: 'Microsoft YaHei', 'SimHei', 'STHeiti', sans-serif;
+}
+button{
+    font-size: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+body {
+    min-width: 1200px;
+    /* min-height: 400px; */
+   /*  overflow-x: scroll; */
+}
+select, input, textarea {
+    border: none;
+    outline: none;
+}
+h1,h2,h3,h4,h5,h6
+{
+    font-weight: normal;
+}
+h3{
+    font-size: 18px;
+}
+h4{
+    font-size: 16px;
+}
+button{
+    font-family: "Microsoft YaHei",微软雅黑,"Microsoft JhengHei",华文细黑,STHeiti,MingLiu;
+}
+.container{
+    min-width: 1200px;
+    min-height: 500px;
+    /* overflow: scroll; */
+}
+/*header的css设置*/
+header{
+    width: 100%;
+    height: 60px;
+
+    min-width: 1200px;
+    background-color: #03a9f4;
+    -webkit-box-shadow: 0 1px 3px #9e9e9e;
+    -moz-box-shadow: 0 1px 3px #9e9e9e;
+    -ms-box-shadow: 0 1px 3px #9e9e9e;
+    -o-box-shadow: 0 1px 3px #9e9e9e;
+    box-shadow: 0 1px 3px #9e9e9e;
+
+    z-index: 10;
+}
+header h1{
+    margin-left: 20px;
+    font-size: 30px;
+    line-height: 60px;
+    color: #fff;
+}
+
+/*right关于分类的界面设置*/
+.leftCate{
+    width: 230px;
+    min-height: 500px;
+
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    bottom: 0px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    background-color: #eee;
+    z-index: 9;
+    padding-top: 10px;
+    /* padding-left: 10px; */
+
+    -webkit-box-shadow:  1px 1px 3px #9e9e9e;
+    -moz-box-shadow:  1px 1px 3px #9e9e9e;
+    -ms-box-shadow: 1px 1px 3px #9e9e9e;
+    -o-box-shadow: 1px 1px 3px #9e9e9e;
+    box-shadow: 1px 1px 3px #9e9e9e;
+}
+#cateList{
+    /*overflow-y: scroll;*/
+    /* height: 100%; */
+}
+.leftCate h2{
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: normal;
+    padding-left: 10px;
+}
+#cateList h3{
+    margin-top: 5px;
+    padding-left: 20px;
+    line-height: 1.5;
+}
+#cateList h4{
+    margin-top: 5px;
+    padding-left: 40px;
+    line-height: 1.5;
+}
+#allTask:hover,#cateList h3:hover,#cateList h4:hover{
+    /*如果在所有任务或者是分类上面hover的时候的设置*/
+    z-index: 10;
+    border-radius: 6px;
+    -webkit-box-shadow:  1px 1px 3px #9e9e9e;
+    -moz-box-shadow:  1px 1px 3px #9e9e9e;
+    -ms-box-shadow: 1px 1px 3px #9e9e9e;
+    -o-box-shadow: 1px 1px 3px #9e9e9e;
+    box-shadow: 1px 1px 3px #9e9e9e;
+    cursor: pointer;
+}
+/* .delete{
+    font-size: 18px;
+    float: right;
+    color: #f44336;
+    display: none;
+} */
+.fa-minus-circle{
+    display: none;
+    float: right; 
+    /* position: absolute;
+    right: 20px; */
+    color: #f44336;
+    font-size: 18px;
+    line-height: 1.5;
+}
+#cateList h3:hover .fa-minus-circle,#cateList h4:hover .fa-minus-circle{
+    display: inline;
+}
+#taskList h6:hover  .fa-minus-circle{
+    display: inline;
+    right: 5px;
+}
+.choose{/*被选中的显示设置*/
+    position: relative;
+    z-index: 10;
+    background: #ffeb3b;
+    border-radius: 5px;
+
+    -webkit-box-shadow:  1px 1px 3px #9e9e9e;
+    -moz-box-shadow:  1px 1px 3px #9e9e9e;
+    -ms-box-shadow: 1px 1px 3px #9e9e9e;
+    -o-box-shadow: 1px 1px 3px #9e9e9e;
+    box-shadow: 1px 1px 3px #9e9e9e;
+}
+#addCate,#addTask{/*添加分类的符号显示设置*/
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    line-height: 40px;
+    text-align: center;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    background: #00977a;
+    color: #fff;
+
+    -webkit-box-shadow:  5px 5px 7px #9e9e9e;
+    -moz-box-shadow:  5px 5px 7px #9e9e9e;
+    -ms-box-shadow: 5px 5px 7px #9e9e9e;
+    -o-box-shadow: 5px 5px 7px #9e9e9e;
+    box-shadow: 5px 5px 7px #9e9e9e;
+
+    cursor: pointer;
+}
+
+/*中间的任务列表的设置*/
+.midTask{
+    min-width: 260px;
+    min-height: 500px;
+    position: absolute;
+    top: 60px;
+    bottom: 0px;
+    left: 230px;
+    background: #f5f5f5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*状态栏*/
+.status{
+    position: absolute;
+    top: 0px;
+    height: 40px;
+    width: 260px;
+    padding: 10px;
+    font-size: 14px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.status li{
+    float: left;
+    display: inline-block;
+    line-height: 26px;
+    width: 55px;
+    padding: 0 5px;
+    border: 1px solid #aaa;
+    text-align: center;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.status li:hover{
+    position: relative;
+    z-index: 10;
+    -webkit-box-shadow:  1px 1px 3px #9e9e9e;
+    -moz-box-shadow:  1px 1px 3px #9e9e9e;
+    -ms-box-shadow: 1px 1px 3px #9e9e9e;
+    -o-box-shadow: 1px 1px 3px #9e9e9e;
+    box-shadow: 1px 1px 3px #9e9e9e;
+    color: blue;
+}
+/*任务列表ul*/
+#taskList{
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    bottom: 0px;
+    /* overflow-y: scroll; */
+}
+#taskList li:hover{
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    border-radius: 5px;
+    -webkit-box-shadow:  1px 1px 3px #9e9e9e;
+    -moz-box-shadow:  1px 1px 3px #9e9e9e;
+    -ms-box-shadow: 1px 1px 3px #9e9e9e;
+    -o-box-shadow: 1px 1px 3px #9e9e9e;
+    box-shadow: 1px 1px 3px #9e9e9e;
+}
+#taskList h5{
+    font-size: 14px;
+    line-height: 30px;
+    background: #eee;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+#taskList h6{
+    font-size: 14px;
+    line-height: 25px;
+    padding-left: 25px;
+}
+/*这三句的意思是如果任务没有被标记taskDone 那么就不会出现fa-check*/
+.fa-check{
+    display: none;
+}
+.taskDone{
+    color: #4caf50;
+}
+.taskDone .fa-check{
+    display: inline;
+}
+
+/*右边任务详细内容的展示的设置*/
+.rightDisplay{
+    min-width: 710px;
+    min-height: 500px;
+    position: absolute;
+    top: 60px;
+    bottom: 0px;
+    right: 2px;
+    left: 490px;
+    /*overflow-y: scroll;*/
+    z-index: 8;
+
+    -webkit-box-shadow:  1px 1px 3px #9e9e9e;
+    -moz-box-shadow:  1px 1px 3px #9e9e9e;
+    -ms-box-shadow: 1px 1px 3px #9e9e9e;
+    -o-box-shadow: 1px 1px 3px #9e9e9e;
+    box-shadow: 1px 1px 3px #9e9e9e;
+}
+/* .rightDisplay{
+    display: none;
+}
+.rightEdit{
+    display: block;
+} */
+.task-title,.task-date{
+    width: 100%;
+    height: 50px;
+    background: #fafafa;
+    line-height: 50px;
+    padding: 0 10px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    font-size: 18px;
+
+    border-bottom: 1px solid #ccc;
+}
+.set{
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+}
+.task-content{
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    padding: 20px;
+    background: #fff;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    font-size: 16px;
+}
+/*编辑div*/
+.rightEdit{
+    min-width: 710px;
+    min-height: 500px;
+    display: none;
+    position: absolute;
+    top: 60px;
+    bottom: 0px;
+    right: 0px;
+    left: 490px;
+    float: left;
+    z-index: 8;
+
+    -webkit-box-shadow:  1px 1px 3px #9e9e9e;
+    -moz-box-shadow:  1px 1px 3px #9e9e9e;
+    -ms-box-shadow: 1px 1px 3px #9e9e9e;
+    -o-box-shadow: 1px 1px 3px #9e9e9e;
+    box-shadow: 1px 1px 3px #9e9e9e;
+}
+.rightEdit input{
+    height: 30px;
+    width: 200px;
+    padding-left: 5px;
+    border: 1px solid #ccc;
+    font-family: "Microsoft YaHei";
+}
+textarea{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 100px;
+    width: 680px;
+    border: 1px solid #ccc;
+    font-family: "Microsoft YaHei";
+    
+    font-size: 18px;
+}
+#saveOrCancel{
+    position: absolute;
+    bottom: 50px;
+    right: 150px;
+}
+#saveOrCancel button{
+    width: 60px;
+    height: 30px;
+    margin-right: 20px;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 30px;
+    border-radius: 5px;
+    background-color: green;
+}
+/*增加分类按钮出来div*/
+#cover{
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 99;
+}
+#cover .cover-wrap{
+    width: 320px;
+    height: 180px;
+    padding: 15px;
+    background-color: #eee;
+    /*居中*/
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -160px;
+    margin-top: -90px;
+    z-index: 100;
+    -webkit-box-shadow: 0px 0px 40px rgba(0,0,0,0.8);/*设置盒子的阴影 考虑不同的浏览器*/
+    -moz-box-shadow: 0px 0px 40px rgba(0,0,0,0.8);
+    -o-box-shadow: 0px 0px 40px rgba(0,0,0,0.8);
+    -ms-box-shadow: 0px 0px 40px rgba(0,0,0,0.8);
+    box-shadow: 0px 0px 40px rgba(0,0,0,0.8);
+}
+#cover .cover-wrap-title{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 22px;
+    border-bottom: 1px dashed #999;
+}
+#cover .cover-wrap-content{
+    font-size: 18px;
+    text-align: center;
+
+}
+#cover .cover-wrap-class{
+    width: 150px;
+    height: 30px;
+    border: 1px solid #aaa;
+    margin-top: 8px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#cover .cover-wrap-class option{
+    font-size: 16px;
+}
+#cover .cover-wrap-footer{
+    position: absolute;
+    bottom: 20px;
+    font-size: 18px;
+    margin-left: 80px;
+}
+#cover button{
+    width: 65px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: green;
+    margin-right: 20px;
+    color: #fff;
+}
+#cover button:hover{
+    background-color: #0affc0;
+    color: #000;
+    -webkit-box-shadow:  1px 1px 3px #9e9e9e;
+    -moz-box-shadow:  1px 1px 3px #9e9e9e;
+    -ms-box-shadow: 1px 1px 3px #9e9e9e;
+    -o-box-shadow: 1px 1px 3px #9e9e9e;
+    box-shadow: 1px 1px 3px #9e9e9e;
+}

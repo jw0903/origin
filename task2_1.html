@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+    <head>
+        <meta meta="utf-8" />
+        <title>task2</title>
+    </head>
+    <body>
+        <input type="text" id="hobby" />
+        <input type="button" id="btn" value="按钮" />
+        <p id="txt"></p>
+        <div id="cen"></div>
+        <script>
+            var hob=document.getElementById('hobby');
+            var btn=document.getElementById('btn');
+            var text=document.getElementById('txt');
+            var som=true;
+            btn.addEventListener("click",function(){
+                var hobby=hob.value;
+                hobby=hobby.replace(/[\s,，、；;]+/g," ");
+                hobby=hobby.split(' ');
+                if(hobby.length<1){
+                    text.innerHTML="爱好不能为空";
+                }else if(hobby.length>10){
+                    text.innerHTML="爱好必须小与10个";
+                }else 
+                    hob.onchange=function() {
+                        /* Act on the event */
+                        hobby=uniq(hobby);
+                    var result=document.createElement('div');
+                    var h3=document.createElement("h3");
+                    h3.innerHTML="爱好";
+                    result.appendChild(h3);
+                    for(var i in hobby){
+                        var check=document.createElement('input');
+                        check.type='checkbox';result.appendChild(check);
+                        var textnode=document.createTextNode(hobby[i]);
+                        result.appendChild(textnode);
+                        
+                    }
+                    document.getElementById('cen').appendChild(result);
+                    som=false;
+                    };
+            }, false);
+            function uniq(arr){
+                var newArr=[];
+                //去除空字符和重复项
+                for(var i in arr){
+                    if(newArr.indexOf(arr[i])==-1&&arr[i]!==" "){
+                        newArr.push(arr[i]);
+                    }
+                }
+                return newArr;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>个人管理系统</title>
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+    <header>
+        <h1>ToDo</h1><!--个人管理页面的头部-->
+    </header>
+    <div class="container">
+        <div class="leftCate">
+            <h2 id="allTask"><i class="fa fa-bars"></i><span>所有任务</span><span id="uTaskNum">(0)</span></h2>
+            <h2><i class="fa fa-bars"></i>分类列表</h2>
+            <ul id="cateList">
+                <!-- <li>
+                    <h3><i class="fa fa-folder-open"></i><span>默认主分类</span>(0)<i class="fa fa-minus-circle"></i></h3>
+                    <ul>
+                        <li>
+                            <h4><i class="fa fa-file-text"></i><span>默认子分类</span>(0)<i class="fa fa-minus-circle"></i></h4>
+                        </li>
+                    </ul>
+                </li> -->
+            </ul>
+            <div id="addCate">
+                <i class="fa fa-plus"></i>
+            </div>
+        </div>
+        <div class="midTask">
+            <div class="status">
+                <ul>
+                    <li class="choose" id="alltasks">所有</li>
+                    <li id='unfinished'><i class="fa fa-frown-o"></i>未完成</li>
+                    <li id='finished'><i class="fa fa-smile-o"></i>已完成</li>
+                </ul>
+            </div>
+            <ul id="taskList">
+                <!-- <li>
+                    <h5>2015-11-16</h5>
+                    <ul class="item">
+                        <li class="task-item taskDone" taskid="0">
+                            <h6 class="choose"><i class="fa fa-check"></i>使用说明<i class="fa fa-minus-circle"></i></h6>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h5>2015-11-17</h5>
+                    <ul class="item">
+                        <li class="task-item" taskid="0">
+                            <h6>使用说明<i class="fa fa-minus-circle"></i></h6>
+                        </li>
+                    </ul>
+                </li> -->
+            </ul>
+            <div id="addTask">
+                <i class="fa fa-plus"></i>
+            </div>
+        </div>
+        <div class="rightDisplay">
+            <div class="task-title">
+                任务标题：<span id="disTitle"></span>
+                <div class="set">
+                    <i class="fa fa-check-square-o"></i>
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+            </div>
+            <div class="task-date">
+                任务日期：<span id="disDate"></span>
+            </div>
+            <div class="task-content" id="disContent">
+                <!-- <span>使用说明</span> -->
+            </div>
+        </div>
+        <div class="rightEdit">
+            <div class="task-title">
+                任务标题：
+                <input type="text" name="title" id="inputTitle" placeholder="请在此输入任务标题">
+            </div>
+            <div class="task-date">
+                任务日期：
+                <input type="date" name="date" id="inputDate">
+            </div>
+            <div class="task-content">
+                <textarea name="content" id="inputContent" placeholder="请在此输入任务内容"></textarea>
+                <div id="saveOrCancel">
+                    <button id="save">保存</button>
+                    <button id="cancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cover"><!--增加新分类的隐藏div内容-->
+        <div class="cover-wrap">
+            <div class="cover-wrap-title">新增分类</div>
+            <div class="cover-wrap-content">
+                选择主分类：
+                <select class="cover-wrap-class" id="addCates">
+                    <!-- <option>新增主分类</option>
+                    <option>百度ife</option> -->
+                </select><br/>
+                新分类名称：
+                <input class="cover-wrap-class" type="text" id="newCateName" placeholder="请在此输入新分类名称">
+            </div>
+            <div class="cover-wrap-footer">
+                <button id="ok">确认</button>
+                <button id="no">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

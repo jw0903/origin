@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>task2-3</title>
+        <style>
+* {
+    margin: 0px;
+    padding: 0px;
+}
+#contain {
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    border: 3px solid #333;
+    margin: 100px auto;
+}
+#list {
+    width: 4200px;
+    height: 600px;
+    position: absolute;
+    z-index: 1;
+}
+#list img {
+    float: left;
+}
+#btns {
+    position: absolute;
+    height: 10px;
+    width: 120px;
+    z-index: 2;
+    bottom: 20px;
+    left: 400px;
+}
+#btns span {
+    cursor: pointer;
+    float: left;
+    border: 1px solid #fbacff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.on {
+    background-color: #274;
+}
+.arrow {/*左右的箭头*/
+    display: none;
+    cursor: pointer;
+    line-height: 40px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+    top: 180px;
+    text-decoration: none;
+    color: #000;
+    background:rgba(0,5,5,.5);
+}
+#oback {
+    left: 20px;
+}
+#onext {
+    right: 20px;
+}
+#contain:hover .arrow {
+    display: block;
+}
+
+
+        </style>
+    </head>
+    <body>
+    <div id="contain">
+        <div id='list' style="left: -600px">
+            <img src="img/5.JPG" height="600" width="600">
+            <img src="img/1.PNG" height="600" width="600" alt="">
+            <img src="img/2.JPG" height="600" width="600" alt="">
+            <img src="img/3.JPG" height="600" width="600" alt="">
+            <img src="img/4.JPG" height="600" width="600" alt="">
+            <img src="img/5.JPG" height="600" width="600" alt="">
+            <img src="img/1.PNG" height="600" width="600">
+        </div>
+        <div id="btns">
+            <span va='1' class='on'></span>
+            <span va='2'></span>
+            <span va='3'></span>
+            <span va='4'></span>
+            <span va='5'></span>
+        </div>
+        <a href="javascript:" id="oback" class="arrow"><</a>
+        <a href="javascript:" id="onext" class="arrow">></a>
+        <script src="js/util.js"></script>
+        <script>
+           window.onload = function() {
+    var contain = $('#contain');
+    var list = $('#list');
+    var btns = $('#btns').getElementsByTagName('span');
+    var oback = $('#oback');
+    var onext = $('#onext');
+    var index = 1;
+    var amd = false; //判断是否在动画中
+    var timer; //存定时器
+    //点击按钮产生新left值并且设置left值达到无线滚动
+    //其中传入的函数值e为偏移的像素值
+    function anni(e) {
+        amd = true;
+        var newLeft = parseInt(list.style.left) + e;//原先值再加上偏移值
+        var time = 400; //位移总时间400毫秒
+        var itv = 10;//每隔10毫秒调用一次  400/10=40次
+        var speed = e / (time / itv);//偏移值除以40次得出每次需要移动的距离
+        //动画函数
+        function go() {
+            if ((speed < 0 && parseInt(list.style.left) > newLeft) || (speed > 0 && parseInt(list.style.left) < newLeft)) {
+                list.style.left = parseInt(list.style.left) + speed + 'px';
+                setTimeout(go, 10);//隔10毫秒之后再执行该函数，是图片过渡平滑。
+            } else {
+                amd = false;
+                list.style.left = newLeft + 'px';
+                if (newLeft > -600) {
+                    list.style.left = -3000 + 'px';
+                }
+                if (newLeft < -3000) {
+                    list.style.left = -600 + 'px';
+                }
+            }
+        }
+        go();
+    }
+
+    function play() {
+        timer = setInterval(fn2, 1000);
+    }
+
+    function stop() {
+            clearInterval(timer);
+    }
+        //切换时给小圆点设置背景
+    function showbtn() {
+            for (var i = 0; i < btns.length; i++) {
+                if (btns[i].className == 'on') {
+                    btns[i].className = '';
+                    break;
+                }
+            }
+            btns[index - 1].className = 'on';
+        }
+        //给左右按钮设置偏移量并且小圆点随着切换
+    var fn1 = function() {
+        if (amd == false) {
+            anni(600);
+        index -= 1;
+        if (index < 1) {
+            index = 5;
+        }
+        showbtn();
+        }
+    }
+    var fn2 = function() {
+        if (amd == false) {
+            anni(-600);
+        
+        index += 1;
+        if (index > 5) {
+            index = 1;
+        }
+        showbtn();
+    }
+    }
+    $.click(oback, fn1);//两个按钮的功能
+    $.click(onext, fn2);
+    //点击小圆点切换图片
+    for (var i = 0; i < btns.length; i++) { //给每个小圆点增加事件
+        $.click(btns[i], function() {
+            var newIndex = parseInt(this.getAttribute('va'));
+            var e = -600 * (newIndex - index); //算出偏移量left的值(总)
+            if (amd == false) {
+                anni(e);
+            }
+            index = newIndex;
+            showbtn();
+            if (e == 0) {
+                return;
+            }
+        })
+    }
+    $.on(contain, 'mouseover', stop);
+    $.on(contain, 'mouseout', play);
+    play();
+}
+        </script>
+    </body>
+</html>

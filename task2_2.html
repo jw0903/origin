@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>task2_2</title>
+    </head>
+    <body>
+        <input type="text" placeholder="年月日：YYYY-MM-DD" id="data1" />
+        <input type="button" id="btn" value="计算" />
+        <div id="time1"></div>
+        <script>
+            var clock;
+            var btn=document.getElementById('btn');
+            btn.addEventListener("click", function(){
+                clearInterval(clock);
+                var showDiv=document.getElementById('time1');
+                var inputValue=document.getElementById("data1").value;
+                var pattern=/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/;
+
+                if(pattern.test(inputValue)){
+                    console.log("right");
+                    var futureTime=new Date(inputValue.replace("-",","));
+                    var futureTimeArr=inputValue.split("-");
+                    clock=setInterval(count,900);
+                    function count(){
+                        var currentTime=new Date();
+                        console.log(futureTime);
+                        console.log("现在时间:"+currentTime);
+                        var gap=futureTime-currentTime;
+                        if(gap==0){
+                            clearInterval(clock);
+                            showDiv.innerHTML="距离"+futureTimeArr[0]+"年"+futureTimeArr[1]+"月"+futureTimeArr[2]+"日还有0天0小时0分0秒";
+                            return;
+                        }else if(gap<0){
+                            clearInterval(clock);
+                            showDiv.innerHTML="请输入未来的某一天.";
+                            return;
+                        }else {
+                            var day=Math.floor(gap/3600/1000/24);
+                            var hour=Math.floor(gap%(3600*1000*24)/1000/3600);
+                            var minute=Math.floor(gap%(3600*1000*24)%(1000*3600)/60/1000);
+                            var second=Math.floor(gap%(3600*1000*24)%(1000*3600)%(60*1000)/1000);
+                            console.log(day+" "+hour+" "+minute+" "+second);
+
+                            showDiv.innerHTML="距离"+futureTimeArr[0]+"年"+futureTimeArr[1]+"月"+futureTimeArr[2]+"日还有"+day+"天"+hour+"小时"+minute+"分"+second+"秒";
+                        }
+                    }
+                }else{
+                    showDiv.innerHTML="请输入正确的格式";
+                }
+            }, false);
+        </script>
+    </body>
+</html>
