@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <meta charset="utf-8"/>
+    <title>004task</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0; 
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            background-color: #000;
+            height: 100%;
+        }
+        .container{
+            position: relative;
+            background: #fff;
+            width: 800px;
+            min-height: 100%;
+            height: auto;
+            margin: auto;
+        }
+        .grey{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 400px;
+            height: 200px;
+            background-color: #ccc;
+            margin: 0 auto;
+        }
+        .y1{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 0 0 50px 0;
+            background: #fc0;
+        }
+        .y2{
+            position: absolute;
+            right: 0;
+            top: 150px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px 0 0 0;
+            background: #fc0;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="grey">
+                <div class="y1"></div>
+                <div class="y2"></div>
+            </div>
+        </div>
+    </body>
+</html>
