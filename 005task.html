@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>table标签</title>
+        <style>
+            /**{
+                margin: 0;
+                padding: 0;
+            }*/
+            body{
+                background-color: #000;
+            }
+            #head{
+                background: #000;
+            }
+            .dao li a{
+                float: right;
+                margin-left: 20px;
+                list-style-type: none;
+                color: #dedede;
+            }
+            .container{
+                background: #dedede;
+                margin: 0 20px;
+            }
+            .page{
+                margin: 30px;
+                background: #fff;
+                padding:20px;
+                overflow: hidden;
+            }
+            li{
+                list-style-type:none;
+            }
+            .pic{
+                width: 200px;
+                margin-top: 10px;
+                border: 1px solid #dedede;
+                overflow: hidden;
+                padding: 0 auto;
+                float: left;
+            }
+            .pic p{
+                text-align: center;
+            }
+            .pic img{
+                margin: 0 26px;
+            }
+            .button{
+                font-weight: bold;
+                height: 50px;
+                line-height: 20px;
+                font-size: 20px;
+                border-radius: 5px;
+                background: #3355d0;
+                margin-left: 20px;
+            }
+            .clear{
+                clear: both;
+            }
+            .lside{
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page" id="head">
+             <ul class="dao">
+                 <li><a href="#">导航链接</a></li>
+                 <li><a href="#">导航链接</a></li>
+                 <li><a href="#">导航链接</a></li>
+                 <li><a href="#">导航链接</a></li>
+             </ul>
+        </div>
+        <div class="container">
+            <div class="lside page">
+                     <h2>这里是侧栏</h2>
+                     <h2>侧栏注册窗口标题</h2>
+                     <p>请输入邮箱地址：<input type="text" placeholder="这是一个文本输入框" /></p>
+                     <p style="color:grey;font-size:13px;">邮箱地址请按照要求格式输入</p>
+                     <p>请输入密码：<input type="text" placeholder="这是一个文本输入框"/></p>
+                     <p>请再输入密码：<input type="text" placeholder="这是一个文本输入框"/></p>
+                     <b>密码请为6-16为英文数字</b>
+                    <p>
+                        性别：
+                        <input type="radio" name="sex" id="male" value="男" />
+                        <label for="male">男</label>
+                        <input type="radio" name="sex" id="female" value="女" />
+                        <label for="female">女</label>
+                        城市：
+                        <select name="city" id="city">
+                            <option value="BJ">北京</option>
+                            <option value="SH">上海</option>
+                            <option value="GZ">广州</option>
+                        </select><br/>
+                        爱好：
+                        <input type="checkbox" />运动
+                        <input type="checkbox" />运动
+                        <input type="checkbox" />运动
+                        <input type="checkbox" />运动<br/><br/>
+                        个人描述：
+                        <textarea name="per" id="per" cols="20" rows="2" placeholder="这里是一个个人描述的栏目"></textarea>
+                    </p>
+                    <input type="button" value="确认提交" class="button" />
+                 </div>
+            <div class="page">
+                <h2>文章一级标题</h2>
+                 <h3>文章二级标题</h3>
+                 <p>文章作者 文章发表时间</p>
+                 <p>这是一个很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的段落</p>
+                 <p>这是一个很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的段落</p>
+                 <img src="img/1.JPG" alt="图片" width="200" height="200" />
+            </div>
+            <div class="page">
+                <h2>文章一级标题</h2>
+                 <h3>文章二级标题</h3>
+                 <p>文章作者 文章发表时间</p>
+                 <p>这是一个很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的段落</p>
+                 <p>这是一个很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的段落</p>
+                 <img src="img/1.JPG" alt="图片" width="200" height="200" />
+                 <ul>
+                     <li>列表项目一</li>
+                     <li>列表项目二</li>
+                     <li>列表项目三</li>
+                 </ul>
+            </div>
+            <div class="page">
+                <h2>图片</h2>
+                 <div class="pic">
+                     <p>好看的图片</p>
+                     <img src="img/1.JPG" alt="图片" width="150" height="150" />
+                 </div>
+                 <div class="pic">
+                     <p>好看的图片</p>
+                     <img src="img/1.JPG" alt="图片" width="150" height="150" />
+                 </div>
+                 <div class="pic">
+                     <p>好看的图片</p>
+                     <img src="img/1.JPG" alt="图片" width="150" height="150" />
+                 </div>
+                 <div class="pic">
+                     <p>好看的图片</p>
+                     <img src="img/1.JPG" alt="图片" width="150" height="150" />
+                 </div>
+                 <div class="pic">
+                     <p>好看的图片</p>
+                     <img src="img/1.JPG" alt="图片" width="150" height="150" />
+                 </div>
+                 <div class="pic">
+                     <p>好看的图片</p>
+                     <img src="img/1.JPG" alt="图片" width="150" height="150" />
+                 </div>
+                 <div class="pic">
+                     <p>好看的图片</p>
+                     <img src="img/1.JPG" alt="图片" width="150" height="150" />
+                 </div>
+                 <div class="pic">
+                     <p>好看的图片</p>
+                     <img src="img/1.JPG" alt="图片" width="150" height="150" />
+                 </div>
+                 <div class="pic">
+                     <p>好看的图片</p>
+                     <img src="img/1.JPG" alt="图片" width="150" height="150" />
+                 </div>
+                 <div class="pic">
+                     <p>好看的图片</p>
+                     <img src="img/1.JPG" alt="图片" width="150" height="150" />
+                 </div>
+            </div>
+            <div class="page clear" style="padding-bottom:30px;">
+                 <h3>文章二级标题</h3>
+                 <p>文章作者 文章发表时间</p>
+                 <div style="width:900px;margin:0 auto">
+                     <ol>
+                     <li>排名1</li>
+                     <li>拍名2</li>
+                     <li>排名3</li>
+                 </ol>
+                 <p>下面是一个表格，给表格加了一个border="1"好让你能看出来是一个表格</p>
+                 <table border="solid 1px">
+                     <tr class="tou">
+                         <th bgcolor="#dedede">表头1</th>
+                         <th bgcolor="#dedede">表头2</th>
+                         <th bgcolor="#dedede">表头3</th>
+                     </tr>
+                     <tr>
+                         <td>表内容1</td>
+                         <td>表内容2</td>
+                         <td><a href="#">操作</a></td>
+                     </tr>
+                     <tr>
+                         <td>表内容1</td>
+                         <td>表内容2</td>
+                         <td><a href="#">操作</a></td>
+                     </tr>
+                     <tr>
+                         <td>表内容1</td>
+                         <td>表内容2</td>
+                         <td><a href="#">操作</a></td>
+                     <tr>
+                         <td>总计</td>
+                         <td colspan="2">1000</td>
+                     </tr>
+                 </table>
+                 </div>
+            </div>
+
+        </div>
+        <p style="color:#fff;text-align:center">版权所有©</p>
+    </body>
+</html>
