@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>官网页面架构</title>
+        <style>
+            html{
+                background:#000;
+                font-family: 微软雅黑;
+            }
+            *{
+                margin: 0;
+                padding:0;
+            }
+            .left{
+                float: left;
+            }
+            .right{
+                float: right;
+            }
+            .container{
+                width: 1280px;
+                height: 4193px;
+                margin: 0 auto;
+                background-color: #fff;
+            }
+            button:hover{
+                cursor:pointer;
+            }
+            /*下面是首页顶端的样式*/
+            header{
+                width: 100%;
+                height: 747px;
+            }
+            .head{
+                width: 100%;
+                height: 59px;
+            }
+            .head p{
+                font-size: 25px;
+                font-weight: bold;
+                line-height: 25px;
+                margin: 15px 0 15px 50px;
+                float: left;
+            }
+            .head ul li{
+                width: 100px;
+                color: #7f7f81;
+                padding: 18px 0;
+                text-align: center;
+                float: right;
+                list-style-type: none;
+                box-sizing:padding-box;
+            }
+            .head ul li:nth-child(1){
+                color: #e74e48;
+            }
+            .head ul li:hover{
+                color: #e74e48;
+                border-bottom: 2px solid #e74e48;
+            }
+            .himg{
+                position: relative;
+                width: 100%;
+                height: 690px;
+                background:url(img/himg.png) no-repeat;
+                box-sizing:border-box;
+                padding: 200px 0 0 100px;
+            } opacity: .5;
+            }
+            .himg h1{
+                font-size: 60px;
+                color: #fff;
+                margin-bottom: 20px
+            }
+            .himg p{
+                font-size: 25px;
+                color: #fff;
+            }
+            .himg input{
+                width: 330px;
+                height: 65px;
+                background-color: #e74e48;
+                color: #fff;
+                font-size: 35px;
+                text-align: center;
+                border:0;
+                border-radius: 4px;
+                margin-top: 40px;
+            }
+            .mid{
+                width: 100%;
+            }
+            .mid1{
+                height: 569px;
+            }
+            .m1img div{
+                width: 159px;
+                height: 55px;
+                font-size: 14px;
+                color: #787878;
+                border-right: 2px solid #ccc;
+                float: left;
+                padding: 0 79px;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .m1img div:last-child{
+                border:0;
+            }
+            .mid2{
+                width: 100%;
+                height: 922px;
+                overflow: hidden;
+            }
+            .m2img{
+                width: 100%;
+                height: 342px;
+                text-align: center;
+                color: #fff;
+                background:url(img/mid2-1.png) no-repeat;
+            }
+            .m2img p:nth-child(1){
+                font-size: 25px;
+                padding: 30px 0;
+            }
+            .m2img p:nth-child(2){
+                padding-bottom: 60px;
+            }
+            .m2img select,.m2img button{
+                width: 235px;
+                height: 35px;
+            }
+            .m2img select{
+                font-size: 18px;
+                color: #b0b0b0;
+                margin-right: 15px;
+            }
+            .m2img button{
+                background-color: #e74e48;
+                border:0px;
+                border-radius:4px; 
+                color: #fff;
+            }
+            .m2img1{
+                height: 380px;
+                background-color: #f7f7f7;
+                padding:100px;
+            }
+            .m2img1 div{
+                float: left;
+                width: 202px;
+                height: 400px;
+                margin-right: 90px;
+            }
+            .m2img1 div:last-child{
+                margin:0;
+            }
+            .m2img1 div img{
+                padding: 12px 10px;
+                border: 1px solid #ccc;
+            }
+            .m2img1 div p:nth-child(2){
+                text-align: center;
+            }
+            .m2img1 div p:nth-child(3){
+                text-align: center;
+                color: #878787;
+                font-size: 14px;
+            }
+            .m2img1 div:nth-child(2) p:nth-child(1){
+                text-align: center;
+                width: 267px;
+                letter-spacing: 45px;
+                font-size: 20px;
+                font-family: 黑体;
+            }
+            .m2img1 div:nth-child(2) p:nth-child(2){
+                font-size: 14px;
+                color: #878787;
+            }
+            .mid3{
+                width: 100%;
+                height: 1085px;
+            }
+            .mid3 .m3simg{
+                height:565px;
+                width:849px;
+                background:url(img/mid4-1.png) no-repeat;
+                text-align: center;
+                box-sizing:border-box;
+                padding: 100px 0;
+                color: #fff;
+                font-family: 黑体;
+            }
+            .mid3 .m3simg p:nth-child(1){
+                font-size: 90px;        
+            }
+            .mid3 .m3simg p:nth-child(2){
+                font-size: 180px;        
+            }
+            .mid3 .m3simg p:nth-child(3){
+                font-size: 30px;        
+            }
+            .mid3 .m3simg p:nth-child(4){
+                font-size: 30px;        
+            }
+            .mid3 .m3stext{
+                position: relative;
+                width: 431px;
+                height: 565px;
+                background: #ffffff;
+                text-align: center;
+                box-sizing:border-box;
+                padding: 160px 70px 0 70px;
+            }
+            .mid3 .m3stext p:nth-child(1){
+                font-size: 25px;
+                font-family: 黑体;
+            }   
+            .mid3 .m3stext p span{
+                font-size: 25px;
+                font-family: 黑体;
+                color: #ea4f4d;
+            }
+            .mid3 .m3stext p:nth-child(2){
+                line-height: 32px;
+                font-size: 12px;
+                font-family: 宋体;
+                opacity: 0.3;
+            }
+            .mid3 .m3stext button{
+                width: 105px;
+                height: 30px;
+                border: solid 1px #ea4f4d;
+                color: #ea4f4d;
+                background: #ffffff; 
+                margin-top: 20px;
+            }
+            .mid3 .m3stext button:hover{
+                cursor:pointer;
+            }
+            .mid3 .m3stext ul{
+                position: absolute;
+                bottom: 80px;
+                left: 150px;
+            }
+            .mid3 .m3stext ul li{
+                display: inline-block;
+                float: left;
+                list-style-type: none;
+                width: 15px;
+                height: 15px;
+                background-color: #ffffff;
+                border-radius: 15px;
+                border: solid 1px #ccc;
+                margin-right: 40px;
+            }
+            .mid3 .m3stext ul li:hover{
+                background-color: #ccc;
+                cursor: pointer;
+            }
+            .m3x div{
+                width: 426px;
+                height: 519px;
+                text-align: center;
+                box-sizing:border-box;
+                font-family: 黑体;
+                font-size: 20px;
+                padding:170px 130px 0 130px;
+            }
+            .m3x div:nth-child(1){
+                background-color:#ea4f4d; 
+                color: #ffffff;
+            }
+            .m3x div:nth-child(1) button{
+                border: 1px solid #ffffff;
+                color: #ffffff;
+                background-color: #ea4f4d;
+                width: 165px;
+                height: 40px;
+                font-size: 20px;
+                margin-top: 40px;
+                font-family: 黑体;
+            }
+            .m3x div:nth-child(2) button{
+                border: 1px solid #ea4f4d;
+                color: #ea4f4d;
+                background-color: #ffffff;
+                width: 165px;
+                height: 40px;
+                font-size: 20px;
+                margin-top: 40px;
+                font-family: 黑体;
+            }
+            .mid4{
+                width: 100%;
+                height: 200px;
+                text-align: center;
+                padding: 50px 430px 0 430px;
+                box-sizing:border-box;
+            }
+            .mid4 p:nth-child(1){
+                font-family: 黑体;
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+            .mid4 p:nth-child(2){
+                font-size: 13px;
+                opacity: 0.4;
+            }
+            .mid5{
+                width: 100%;
+                height: 400px;
+                padding: 0 130px;
+                box-sizing:border-box;
+            }
+            .mid5 .m5l{
+                width: 290px;
+                margin-right: 70px;
+            }
+            .mid5 .m5l div{
+                position: relative;
+            }
+            .mid5 .m5l div p:nth-child(1){
+                font-family: 黑体;
+                font-size: 18px;
+                margin: 20px 0;
+                opacity: 0.8;
+            }
+            .mid5 .m5l div p:nth-child(2){
+                opacity: 0.5;
+            }
+            .mid5 .m5l div span{
+                position: absolute;
+                bottom: -15px;
+                right: 0;
+                opacity: 0.5;
+                cursor: pointer;
+            }
+            .mid5 .m5r{
+                width: 660px;
+                text-align: center;
+            }
+            .mid5 .m5r span input{
+                width: 310px;
+                height: 37px;
+                background-color: #ededef;
+                margin-bottom: 12px;
+                border:0;
+                font-size: 17px;
+            }
+            .mid5 .m5r span input:nth-child(1){
+                margin-right: 15px;
+            }
+            .mid5 .m5r textarea{
+                width: 635px;
+                height: 117px;
+                background-color: #ededef;
+                margin-bottom: 12px;
+                border:0;
+                font-size: 17px;
+            }
+            .mid5 .m5r form>input{
+                width: 635px;
+                height: 37px;
+                font-size: 20px;
+                border:0;
+            }
+            footer{
+                height: 220px;
+                width: 100%;
+                background-color: #33363f;
+                text-align: center;
+                color: #ffffff;
+                padding-top: 50px;
+            }
+            footer div input{
+                width: 430px;
+                height: 40px;
+                padding:0;
+                font-size: 17px;
+                border: 0;
+            }
+            footer div button{
+                width: 80px;
+                height: 40px;
+                font-family: 黑体;
+                background-color: #717179;
+                color: #ffffff;
+                border:0;
+            }
+            footer div:nth-child(2){
+                width: 100%;
+                height: 55px;
+                background-color: #30303a;
+                position: relative;
+            }
+            footer div:nth-child(2) p{
+                display: block;
+                position: absolute;
+            }
+            footer div:nth-child(2) p:first-child{
+                top:13px;
+                left: 80px;
+            }
+            footer div:nth-child(2) p:last-child{
+                top: 13px;
+                right: 80px;  
+            }
+            a{
+                text-decoration: none;
+                color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="head" id="head">
+                    <p>新世界</p>
+                    <ul>
+                         <li class="login">登录</li>
+                         <li>关于我们</li>
+                         <li>爱心活动</li>       
+                         <li>项目介绍</li>
+                         <li>最新活动</li>
+                         <li>首页</li>
+                    </ul>
+                </div>
+                <div class="himg">
+                    <h1>Time of new life</h1>
+                    <p>新时代，年轻人让我们一起</p>
+                    <p>体验新生活，享受新生活</p>
+                    <form action="">
+                        <input type="button" value="开始体验" />
+                    </form>
+                </div>
+            </header>
+            <div class="mid">
+                <div class="mid1">
+                    <img src="img/mid1.png" height="111" width="1280" alt="我是图片" />
+                    <div class="m1img">
+                        <div>打造全新世界观，让你更爱你的生活</div>
+                        <div>
+                            丰富多彩的公益活动，发挥新世界的主人公意识
+                        </div>
+                        <div>时尚的新概念，超前体验未知的生活</div>
+                        <div>完善的培养机制，培养你全新的世界观</div>
+                    </div>
+                    <img src="img/mid1-2.png" height="361" width="1280" alt="我也是图片" />
+                </div>
+                <div class="mid2">
+                    <div class="m2img">
+                        <p>查找新世界活动城市信息</p>
+                        <p>每个城市都有不同的活动信息，请自主查询你所需要的信息</p>
+                        <form action="">
+                            <select name="country" id="country">
+                                <option value="CH">中国</option>
+                                <option value="USA">美国</option>
+                                <option value="JAP">日本</option>
+                                <option value="ENG">英国</option>
+                            </select>
+                            <select name="province" id="pro">
+                                <option value="GD">广东</option>
+                                <option value="ZJ">浙江</option>
+                            </select>
+                            <select name="city" id="city">
+                                <option value="GZ">广州</option>
+                                <option value="SH">上海</option>
+                                <option value="HZ">杭州</option>
+                            </select>
+                            <button>搜索</button>
+                        </form>
+                    </div>
+                    <div class="m2img1">
+                        <div>
+                            <img src="img/mid3-1.png" height="310" width="202" alt="tutu" />
+                            <p>北京活动</p>
+                            <p>新社区大联盟</p>
+                        </div>
+                        <div>
+                            <p>上海活动</p>
+                            <p>夜上海新景观探索</p>
+                            <img src="img/mid3-2.png" height="310" width="202" alt="tutu" />
+                        </div>
+                        <div>
+                            <img src="img/mid3-3.png" height="310" width="202" alt="tutu" />
+                            <p>深圳活动</p>
+                            <p>全新海岸线观景点</p>
+                        </div>
+                        <div>
+                            <img src="img/mid3-4.png" height="310" width="202" alt="tutu" />
+                            <p>香港活动</p>
+                            <p>奢侈品活动大派送</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mid3">
+                    <div class="m3s">
+                        <!-- <img src="img/mid4-1.png" height="565" width="849" alt="tt" /> -->
+                        <div class="m3simg left">
+                            <p>新世界</p>
+                            <p>TIME</p>
+                            <p>@新世界-北京</p>
+                            <p>2017-02-27</p>
+                        </div>
+                        <div class="m3stext left">
+                            <p>新世界/<span>01</span></p>
+                            <p>我就是我是不一样的烟火我就是我是不一样的烟火我就是我是不一样的烟火我就是我是不一样的烟火我就是我是不一样的烟火我就是我是不一样的烟火我就是我是不一样的烟火我就是我是不一样的烟火我就是我是不一样的烟火我就是我是不一样的烟火我就是我是不一样的烟火我就是我是不一样的烟火</p>
+                            <button>更多详情</button>
+                             <ul>
+                                 <li></li>
+                                 <li></li>
+                                 <li></li>
+                             </ul>
+                        </div>
+                    </div>
+                    <div class="m3x">
+                        <div class="left">
+                            <p>新时代</p>
+                            <p>关于爱生活的我们</p>
+                            <button>查看更多</button>
+                        </div>
+                        <div class="left">
+                            <p>新时代</p>
+                            <p>关于爱生活的我们</p>
+                            <button>查看更多</button>
+                        </div>
+                        <img src="img/mid4-2.png" class="left" height="519" width="428" alt="" />
+                    </div>
+                </div>
+                <div class="mid4">
+                    <p>欲戴王冠 必承其重</p>
+                    <p>世上只有一种英雄主义，就是在认清生活真相以后依然热爱生活,we choose to go to the moon in this decode and do the other things,not because they are easy,but because they are hard.</p>
+                </div>
+                <div class="mid5">
+                    <div class="m5l left">
+                        <div>
+                            <p>加油吧骚年</p>
+                            <p>生而为人最棒的事情就是可以不断的学习。世界总是动荡的，唯有宁静的心才可享受周遭的动荡。</p>
+                            <span>more</span>
+                        </div>
+                        <div>
+                            <p>加油吧骚年</p>
+                            <p>生而为人最棒的事情就是可以不断的学习。世界总是动荡的，唯有宁静的心才可享受周遭的动荡。</p>
+                            <span>more</span>
+                        </div>
+                        <div>
+                            <p>更多条款</p>
+                            <span>more</span>
+                        </div>
+                    </div>
+                    <div class="m5r left">
+                        <form action="">
+                            <span><input type="text" placeholder="姓名："/><input type="text" placeholder="年龄："/></span><br/>
+                            <span><input type="text" placeholder="联系方式："/><input type="text" placeholder="联系地址："/></span><br/>
+                            <textarea name="" id="" cols="30" rows="10" placeholder="你的梦想生活："></textarea><br/>
+                            <input type="button" value="提交申请" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div>
+                    <p>联系我们</p>
+                    <p>可以快速关注我们</p>
+                    <form action="">
+                        <input type="text" placeholder="someone@email.com"/><button>提交</button>
+                    </form>
+                    <img src="img/footer.png" height="78" width="1280" alt="" />
+                </div>
+                <div>
+                    <p>@2017新世界</p>
+                    <p><a href="#head">back to top</a></p>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
