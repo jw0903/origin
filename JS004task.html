@@ -30,12 +30,16 @@
             }
             lout.onclick=function(){
                 var num=text.indexOf(" ");
+                var t1=text.substring(0,num);
+                alert("确定删除该元素："+t1);
                 text=text.substring(num+1);
                 res.innerHTML=text;
             }
             rout.onclick=function(){
                 var num=text.lastIndexOf(" ");
-                alert(num);
+                var t1=text.substring(num);
+                console.log(t1);
+                alert("确定删除该元素："+t1);
                 text=text.substring(0,num);
                 res.innerHTML=text;
             }
