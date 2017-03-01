@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JS005task</title>
+        <style>
+           /* div{
+                min-height: 30px;
+            }*/
+            #res{
+                overflow: hidden;
+            }
+            #num{
+                height: 70px;
+                width: 30px;
+                background-color: #f35;
+                margin:2px;
+                float: left;
+                text-align: center;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <input type="text" id="inp" />
+            <button id="lin">左进入</button>
+            <button id="rin">右进入</button>
+            <button id="lout">左出</button>
+            <button id="rout">右出</button>
+            <button id="sort">排序</button>
+        </div>
+        <div id="res">
+            
+        </div>
+        <script>
+            var lin = document.getElementById('lin');
+            var rin = document.getElementById('rin');
+            var lout = document.getElementById('lout');
+            var rout = document.getElementById('rout');
+            var sort = document.getElementById('sort');
+            var res = document.getElementById("res");
+            var dd = document.getElementById('res').getElementsByTagName("div");
+            var text="";
+            lin.onclick=function(){
+                var inp = document.getElementById('inp').value;
+                if(inp.length==0) return;
+                if(inp<0||inp>80){alert("请输入数字控制在0-80中");return;}
+                if(dd.length>=10){alert("柱状图已经满了");return;}
+                text="<div id='num'>"+inp+"</div>";
+                res.innerHTML = text+res.innerHTML;
+                dd[0].style.height=dd[0].innerHTML*8+"px";
+            }
+            rin.onclick=function(){
+                var inp = document.getElementById('inp').value; 
+                if(inp.length==0) return;
+                if(inp<0||inp>80){alert("请输入数字控制在0-80中");return;}
+                if(dd.length>=10){alert("柱状图已经满了");return;}
+                text="<div id='num'>"+inp+"</div>";
+                res.innerHTML +=text;
+                dd[dd.length-1].style.height=dd[dd.length-1].innerHTML*8+"px";
+            }
+            lout.onclick=function(){
+                if(dd.length==0) {return};
+                console.log("确认删除："+dd[0].innerHTML);
+                dd[0].outerHTML="";
+            }
+            rout.onclick=function(){
+                if(dd.length==0){return};
+                console.log("确认删除："+dd[dd.length-1].innerHTML);
+                dd[dd.length-1].outerHTML="";
+            }
+            sort.onclick=function(){
+                var arr=[];
+                for(var i=0;i<dd.length;i++){
+                    arr[i]=dd[i].innerHTML;
+                }
+                arr.sort(function(a,b){
+                    return a-b;
+                });
+                for(var i=0;i<arr.length;i++){
+                    dd[i].innerHTML=arr[i];
+                }
+                for(var i in dd){
+                    dd[i].style.height=dd[i].innerHTML*8+"px";
+                }
+            }
+        </script>
+    </body>
+</html>
