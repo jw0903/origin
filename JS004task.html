@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JS004task</title>
+    </head>
+    <body>
+        <input type="text" id="text" />
+        <button id="lin">左进</button>
+        <button id="rin">右进</button>
+        <button id="lout">左出</button>
+        <button id="rout">右出</button>
+        <p id="res"></p>
+        <script>
+            var lin = document.getElementById('lin');
+            var rin = document.getElementById('rin');
+            var lout = document.getElementById('lout');
+            var lout = document.getElementById('lout');
+            var res = document.getElementById("res");
+            var text="";
+            rin.onclick=function(){
+                var tt = document.getElementById('text').value;
+                text +=" "+ tt;
+                res.innerHTML= text;
+            }
+            lin.onclick=function(){
+                var tt = document.getElementById('text').value;
+                text = tt+" "+text;
+                res.innerHTML=text;
+            }
+            lout.onclick=function(){
+                var num=text.indexOf(" ");
+                text=text.substring(num+1);
+                res.innerHTML=text;
+            }
+            rout.onclick=function(){
+                var num=text.lastIndexOf(" ");
+                alert(num);
+                text=text.substring(0,num);
+                res.innerHTML=text;
+            }
+        </script>
+    </body>
+</html>
