@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>009task</title>
+        <style>
+            *{
+                margin: 0;
+                padding:0;
+            }
+            body{
+                background: #000;
+            }
+            header{
+                max-width: 1280px;
+                width: auto;
+                height: 55px;
+                margin: 0 auto;
+                background-color: #2189c0;
+                position: relative;
+            }
+            header>div{
+                height: 37px;
+                width: 37px;
+                background-color: #ffffff;
+                position: relative;
+                top: 9px;
+                left: 20px;
+            }
+            header>div>div{
+                height: 15px;
+                width: 15px;
+                border-top:solid 4px #2189c0;
+                border-left: solid 4px #2189c0;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+            header input,header button{
+                float: right;
+            }
+            header input{
+                width: 315px;
+                height: 30px;
+                border-radius: 10px;
+                border:0;
+                margin:-24px 80px;
+            }
+            header button{
+                width: 50px;
+                height: 30px;
+                border: 0;
+                background-color: #2189c0;
+                color: #fff;
+                margin: -24px 15px;
+            }
+            header button:hover{
+                cursor:pointer;
+            }
+            .container{
+                width: 1280px;
+                height: 1211px;
+                background-color: #fff;
+                margin: 0 auto;
+            }
+            .conleft{
+                width: 260px;
+                height: 100%;
+                background-color: #2b2e3d;
+                float: left;
+            }
+            .clhead{
+                width: 100%;
+                height: 150px;
+                box-sizing:border-box;
+                padding:auto;
+                text-align: center;
+            }
+            .clhead .img{
+                height: 60px;
+                width: 60px;
+                margin:10px auto;
+                border-radius: 60px;
+                background: #b9babe;
+            }
+            .clhead .img{
+                content:" img";
+                width: 60px;
+                height: 60px;
+            }
+            .clhead p{
+                display: inline-block;
+                color: #ffffff;
+            }
+            .clhead span{
+                display: inline-block;
+                color: rgb(86,97,113);
+                width: 93px;
+                height: 40px;
+                margin-top: 30px;
+            }
+            .clhead span:nth-child(4){
+                border-right: solid 1px rgb(86,97,113);
+            }
+            .clcon{
+                width: 174px;
+                margin:60px 43px 0 43px;
+                text-align: left; 
+                position: relative;
+            }
+            .clcon ul li{
+                list-style-type: none;
+                padding-top:20px;
+                color: #6f8197; 
+            }
+            .clcon ul li:hover{
+                color: #fff;
+            }
+            .file{
+                display: none;
+                position: relative;
+                left: 30px;
+            }
+
+            .clcon>ul>li:hover .file{
+                display: block;
+            }
+            .clcon>ul>li:hover .file li{
+                color: #fff;
+            }
+            .file li ul{
+                display: none;
+                position: relative;
+                left: 30px;
+            }
+            .file li:hover ul{
+                display: block;
+            }
+            .file li a{
+                text-decoration: none;
+                color: #6f8197;
+            }
+            .file li a:hover{
+                color: #fff;
+            }
+            .file li ul li{
+                color: #6f8197;
+            }
+            .file li ul li:hover{
+                color: #fff;
+            }
+            .conright{
+                width: 1020px;
+                height: 100%;
+                background-color: rgb(237,237,237);
+                float: left;
+            }
+            .header{
+                height: 30px;
+                background-color: #ffffff;
+            }
+            .header p{
+                color: #b0b0b0;
+                line-height: 30px;
+                padding-left: 20px;
+                font-size: 15px;
+            }
+            .header span{
+                color:#90aed0;
+            }
+            .mid1{
+                width: 890px;
+                height: 80px;
+                background: #fff;
+                margin-top:40px;
+                margin-left: 60px;
+            }
+            .mid2{
+                width: 890px;
+                height: 65px;
+                background: #fff;
+                margin-top:10px;
+                margin-left: 60px;
+            }
+            .mid3{
+                width: 890px;
+                height: 70px;
+                background: #fff;
+                margin-top:40px;
+                margin-left: 60px;
+            }
+            .mid4{
+                width: 890px;
+                height: 355px;
+                background: #fff;
+                margin-top:10px;
+                margin-left: 60px;
+            }
+            footer{
+                width: 890px;
+                height: 355px;
+                background-color: #fff;
+                margin-top:10px;
+                margin-left: 60px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div>
+                <div></div>
+            </div>
+            <button>登录</button>
+            <input type="text" placeholder="搜索"/>
+        </header>
+        <div class="container">
+            <div class="conleft">
+                <div class="clhead">
+                    <div class="img"></div>
+                    <p>ABC123</p><br/>
+                    <span>110<br/>收藏</span>
+                    <span>313<br/>粉丝</span>
+                </div>
+                <div class="clcon">
+                    <ul>
+                        <li>个人报表
+                            <ul class="file">
+                                <li>
+                                    <a href="#";>文件一</a>
+                                    <ul>
+                                        <li>文档一</li>
+                                        <li>文档一</li>
+                                        <li>文档一</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#";>文件一</a>
+                                    <ul>
+                                        <li>文档二</li>
+                                        <li>文档二</li>
+                                        <li>文档二</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#";>文件一</a>
+                                    <ul>
+                                        <li>文档三</li>
+                                        <li>文档三</li>
+                                        <li>文档三</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>个人收藏</li>
+                        <li>我的分享</li>
+                        <li>图库</li>
+                        <li>成长记录</li>
+                        <li>账户信息</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="conright">
+                <div class="header">
+                    <p>C站 / 个人报表 / 文件一 / <span>文档一</span></p>
+                </div>
+                <div class="mid1"></div>
+                <div class="mid2"></div>
+                <div class="mid3"></div>
+                <div class="mid4">
+                    <div class="m4l">
+                        <div>第一组项目</div>
+                        <div>
+                            <ul>
+                                <li>项目一</li>
+                                <li>项目一</li>
+                                <li>项目一</li>
+                                <li>项目一</li>
+                                <li>项目一</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="m4r"></div>
+                </div>
+                <footer></footer>
+            </div>
+        </div>
+    </body>
+</html>
