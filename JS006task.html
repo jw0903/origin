@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JS006task</title>
+        <style>
+           /* div{
+                min-height: 30px;
+            }*/
+            #res{
+                overflow: hidden;
+            }
+            #num{
+                background-color: #33efff;
+                height: 50px;
+                padding:10px;
+                margin:2px;
+                float: left;
+                text-align: center;
+                overflow: hidden;
+                color: #000;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <textarea name="text" id="inp" cols="50" rows="10"></textarea>
+            <button id="lin">左进入</button>
+            <button id="rin">右进入</button>
+            <button id="lout">左出</button>
+            <button id="rout">右出</button>
+            
+        </div>
+        <div id="res">
+            
+        </div>
+        <input type="text" id="inp1" style="margin-right:20px" /><button id="search">查询</button>
+        <script>
+            var lin = document.getElementById('lin');
+            var rin = document.getElementById('rin');
+            var lout = document.getElementById('lout');
+            var rout = document.getElementById('rout');
+            var sort = document.getElementById('sort');
+            var res = document.getElementById("res");
+            var dd = document.getElementById('res').getElementsByTagName("div");
+            var inp1 = document.getElementById('inp1');
+            var sea = document.getElementById('search');
+            var text="";
+            lin.onclick=function(){
+                var inp = document.getElementById('inp').value;
+                if(inp.length==0) return;
+                if(dd.length>=20){alert("柱状图已经满了");return;}
+                var myArr=inp.split(/[,.，. ]/);
+                for(var i=myArr.length-1;i>=0;i--){
+                    text="<div id='num'>"+myArr[i]+"</div>";
+                    res.innerHTML = text+res.innerHTML;
+                }
+                // text="<div id='num'>"+inp+"</div>";
+                // res.innerHTML = text+res.innerHTML;
+            }
+            rin.onclick=function(){
+                var inp = document.getElementById('inp').value; 
+                if(inp.length==0) return;
+                if(dd.length>=20){alert("柱状图已经满了");return;}
+                var myArr=inp.split(/[,.，. ]/);//分隔符的集合满足即可；
+                for(var i=0;i<myArr.length;i++){
+                    text="<div id='num'>"+myArr[i]+"</div>";
+                    res.innerHTML += text;
+                }
+            }
+
+            lout.onclick=function(){
+                if(dd.length==0) {return};
+                console.log("确认删除："+dd[0].innerHTML);
+                dd[0].outerHTML="";
+            }
+            rout.onclick=function(){
+                if(dd.length==0){return};
+                console.log("确认删除："+dd[dd.length-1].innerHTML);
+                dd[dd.length-1].outerHTML="";
+            }
+            sea.onclick=function(){
+                for(var i=0;i<dd.length;i++){
+                    document.getElementsByTagName('b').color="#000";
+                    if(dd[i].innerHTML.indexOf(inp1.value)!=-1){
+                        var s = inp1.value;  
+                        var reg = new RegExp("(" + s + ")", "g");
+                        dd[i].innerHTML = dd[i].innerHTML.replace(reg, "<b color=#efc>$1</b>"); 
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
