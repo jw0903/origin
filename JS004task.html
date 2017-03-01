@@ -29,16 +29,17 @@
                 res.innerHTML=text;
             }
             lout.onclick=function(){
+                if(text.length===0) return;
                 var num=text.indexOf(" ");
-                var t1=text.substring(0,num);
+                var t1=text.substring(0,num+1);
                 alert("确定删除该元素："+t1);
                 text=text.substring(num+1);
                 res.innerHTML=text;
             }
             rout.onclick=function(){
+                if(text.length===0) return;
                 var num=text.lastIndexOf(" ");
-                var t1=text.substring(num);
-                console.log(t1);
+                var t1=text.substring(num+1);
                 alert("确定删除该元素："+t1);
                 text=text.substring(0,num);
                 res.innerHTML=text;
